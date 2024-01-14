@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PASSWORD VALIDATION | PRAROZ TUTORIAL</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="form">
+        <h1>WELCOME TO MY WEBSITE</h1> <!-- Changed the header text -->
+        <p>Username :</p>
+        <input type="text" name="" placeholder="Name Here">
+        <p>Password :</p>
+        <input type="password" name="" placeholder="Password Here" id="pass">
+        <input type="checkbox" onclick="myfunction()">
+        <!-- Modified login button to call validate function -->
+        <input type="submit" name="" value="LOGIN" onclick="validate()">
+    </div>
+
+    <div>
+        <p id="length"></p>
+    </div>
+
+    <script>
+        function myfunction() {
+            var x = document.getElementById("pass");
+
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function validate() {
+            var password = document.getElementById("pass");
+
+            if (password.value.length >= 8) {
+                alert("Login Successful");
+                window.open("https://kartiklingayat.github.io/Kartik-Website/", "_blank");
+            } else {
+                alert("Login Failed: Password must be at least 8 characters long.");
+            }
+        }
+    </script>
+</body>
+</html>
